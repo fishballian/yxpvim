@@ -1,0 +1,25 @@
+%%%-------------------------------------------------------------------
+%%% @author $author(fishballian@live.com)
+%%% @copyright (C) $year, <$company>
+%%% @doc
+%%%
+%%% @end
+%%% Created : $fulldate
+%%%-------------------------------------------------------------------
+-module($basename).
+-author("$author").
+
+-ifdef(TEST).
+-include_lib("eunit/include/eunit.hrl").
+-endif.
+
+%% API
+-export([]).
+
+%% Internel
+
+%% Eunit
+-ifdef(TEST).
+
+-endif.
+
