@@ -30,7 +30,6 @@ let g:Powerline_symbols = 'compatible'
 
 set rtp+=$HOME/.vim/bundle/vundle/  
 call vundle#rc()  
-Bundle 'VundleVim/Vundle.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'yegappan/grep'
 Bundle 'vim-erlang/vim-erlang-omnicomplete'
@@ -40,6 +39,7 @@ Bundle 'vim-erlang/vim-erlang-tags'
 Bundle 'vim-erlang/vim-erlang-compiler'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-erlang/erlang-motions.vim'
+Bundle 'VundleVim/Vundle.vim'
 
 filetype plugin indent on 
 
