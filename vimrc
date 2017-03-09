@@ -45,7 +45,7 @@ let g:erl_company="mc"
 autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
 "compile erl
 func CompileErl()
-    exec "!cl %:t:r"
+    exec "!sh mgectl cl %:t:r"
 endfunc
 map <F5> :call CompileErl()<CR>
 "common test
