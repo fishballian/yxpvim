@@ -23,12 +23,13 @@ set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()  
 Bundle 'kien/ctrlp.vim'
 Bundle 'yegappan/grep'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-erlang/vim-erlang-omnicomplete'
 Bundle 'vim-erlang/vim-erlang-skeletons'
 Bundle 'vim-erlang/vim-erlang-runtime'
 Bundle 'vim-erlang/vim-erlang-tags'
 Bundle 'vim-erlang/vim-erlang-compiler'
-Bundle 'scrooloose/nerdtree'
 Bundle 'vim-erlang/erlang-motions.vim'
 Bundle 'VundleVim/Vundle.vim'
 
