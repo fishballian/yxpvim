@@ -11,7 +11,7 @@ syntax on
 set nu
 call pathogen#infect()
 call pathogen#helptags()
-set wildignore+=*.beam,cifs*,*.mcm,*.cs,tags,.git,.svn,ets_meta_config,*.dump,proto_check.erl,Proto.xml,all_pb.hrl,gateway_proto_router.erl,record_info.erl,robot_proto_router.erl,testlog,recore_info.erl
+set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,proto_check.erl,Proto.xml,all_pb.hrl,gateway_proto_router.erl,record_info.erl,robot_proto_router.erl,testlog,recore_info.erl
 set modeline 
 filetype plugin indent on 
 "powerline
@@ -48,9 +48,15 @@ func CompileErl()
     exec "!sh mgectl cl %:t:r"
 endfunc
 map <F5> :call CompileErl()<CR>
+
 "common test
 func CommonTest()
     exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto -noinput -pa ebin"
 endfunc
 map <F6> :call CommonTest()<CR>
 
+"compile csharp
+func CompileCs()
+    exec "!mcs %:t && mono %:t:r.exe"
+endfunc
+map <F7> :call CompileCs()<CR>
