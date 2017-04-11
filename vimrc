@@ -14,10 +14,12 @@ call pathogen#helptags()
 set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,proto_check.erl,Proto.xml,all_pb.hrl,gateway_proto_router.erl,record_info.erl,robot_proto_router.erl,testlog,recore_info.erl
 set modeline 
 filetype plugin indent on 
+
 "powerline
 set laststatus=2
 set t_Co=256
 let g:Powerline_symbols = 'compatible'
+
 "vundle
 set rtp+=$HOME/.vim/bundle/vundle/  
 call vundle#rc()  
@@ -43,6 +45,7 @@ set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="mc"
 autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
+
 "compile erl
 func CompileErl()
     exec "!sh mgectl cl %:t:r"
