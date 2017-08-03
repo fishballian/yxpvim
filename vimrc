@@ -44,7 +44,7 @@ set runtimepath^=$HOME/.vim/bundle/vim-erlang-runtime
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="mc"
-autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
+autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
 
 "compile erl
 func CompileErl()
