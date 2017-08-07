@@ -62,6 +62,6 @@ map <F6> :call CommonTest()<CR>
 
 "compile csharp
 func CompileCs()
-    exec "!mcs %:t && mono %:t:r.exe"
+    exec "!mcs -r:/usr/lib/mono/4.5-api/System.Xml.Linq.dll %:t && mono %:t:r.exe"
 endfunc
 map <F7> :call CompileCs()<CR>
