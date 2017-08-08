@@ -36,6 +36,7 @@ Bundle 'vim-erlang/vim-erlang-tags'
 Bundle 'vim-erlang/vim-erlang-compiler'
 Bundle 'vim-erlang/erlang-motions.vim'
 Bundle 'VundleVim/Vundle.vim'
+Bundle 'tpope/vim-fugitive'
 
 
 "erlang setting
