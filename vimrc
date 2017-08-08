@@ -37,8 +37,8 @@ Bundle 'vim-erlang/vim-erlang-compiler'
 Bundle 'vim-erlang/erlang-motions.vim'
 Bundle 'VundleVim/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mhinz/vim-signify'
+"Bundle 'airblade/vim-gitgutter'
+"Bundle 'mhinz/vim-signify'
 
 "erlang setting
 let g:erlangManPath='/usr/local/lib/erlang/man'
