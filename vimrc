@@ -37,7 +37,9 @@ Bundle 'vim-erlang/vim-erlang-compiler'
 Bundle 'vim-erlang/erlang-motions.vim'
 Bundle 'VundleVim/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'flazz/vim-colorschemes'
 "Bundle 'mhinz/vim-signify'
 
 "erlang setting
@@ -58,7 +60,7 @@ map <F5> :call CompileErl()<CR>
 
 "common test
 func CommonTest()
-    exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto -noinput -pa ebin"
+    exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
 endfunc
 map <F6> :call CommonTest()<CR>
 
@@ -67,3 +69,5 @@ func CompileCs()
     exec "!mcs -r:/usr/lib/mono/4.5-api/System.Xml.Linq.dll %:t && mono %:t:r.exe"
 endfunc
 map <F7> :call CompileCs()<CR>
+
+colorscheme molokai
