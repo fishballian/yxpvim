@@ -21,26 +21,30 @@ set t_Co=256
 let g:Powerline_symbols = 'compatible'
 
 "vundle
+set nocompatible
+filetype off
 set rtp+=$HOME/.vim/bundle/Vundle.vim  
-call vundle#rc()  
-Bundle 'kien/ctrlp.vim'
-Bundle 'yegappan/grep'
-Bundle 'scrooloose/nerdtree'
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'vim-erlang/vim-erlang-omnicomplete'
-Bundle 'vim-erlang/vim-erlang-skeletons'
-Bundle 'vim-erlang/vim-erlang-runtime'
-Bundle 'vim-erlang/vim-erlang-tags'
-Bundle 'vim-erlang/vim-erlang-compiler'
-Bundle 'vim-erlang/erlang-motions.vim'
-Bundle 'VundleVim/Vundle.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'flazz/vim-colorschemes'
-"Bundle 'mhinz/vim-signify'
+call vundle#begin()  
+Plugin 'kien/ctrlp.vim'
+Plugin 'yegappan/grep'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-skeletons'
+Plugin 'vim-erlang/vim-erlang-runtime'
+Plugin 'vim-erlang/vim-erlang-tags'
+Plugin 'vim-erlang/vim-erlang-compiler'
+Plugin 'vim-erlang/erlang-motions.vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'mhinz/vim-signify'
+call vundle#end()
+filetype plugin indent on
 
 "erlang setting
 let g:erlangManPath='/usr/local/lib/erlang/man'
