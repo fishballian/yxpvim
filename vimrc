@@ -13,7 +13,6 @@ call pathogen#infect()
 call pathogen#helptags()
 set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,recore_info.erl
 set modeline 
-filetype plugin indent on 
 
 "powerline
 set laststatus=2
