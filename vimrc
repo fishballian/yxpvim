@@ -21,7 +21,7 @@ set t_Co=256
 let g:Powerline_symbols = 'compatible'
 
 "vundle
-set rtp+=$HOME/.vim/bundle/vundle/  
+set rtp+=$HOME/.vim/bundle/Vundle.vim  
 call vundle#rc()  
 Bundle 'kien/ctrlp.vim'
 Bundle 'yegappan/grep'
