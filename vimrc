@@ -42,6 +42,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'mhinz/vim-signify'
+Plugin 'vim-scripts/taglist.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -56,21 +57,25 @@ let g:erl_company="mc"
 autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
 
 "compile erl
-func CompileErl()
-    exec "!sh mgectl cl %:t:r"
-endfunc
-map <F6> :call CompileErl()<CR>
-
-"common test
-func CommonTest()
-    exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
-endfunc
-map <F7> :call CommonTest()<CR>
-
-"compile csharp
-func CompileCs()
-    exec "!mcs -r:/usr/lib/mono/4.5-api/System.Xml.Linq.dll %:t && mono %:t:r.exe"
-endfunc
-map <F8> :call CompileCs()<CR>
+"func CompileErl()
+"    exec "!sh mgectl cl %:t:r"
+"endfunc
+"map <F6> :call CompileErl()<CR>
+"
+""common test
+"func CommonTest()
+"    exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
+"endfunc
+"map <F7> :call CommonTest()<CR>
+"
+""compile csharp
+"func CompileCs()
+"    exec "!mcs -r:/usr/lib/mono/4.5-api/System.Xml.Linq.dll %:t && mono %:t:r.exe"
+"endfunc
+"map <F8> :call CompileCs()<CR>
 
 colorscheme molokai
+let Tlist_Compact_Format = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
+nnoremap <C-l> :TlistToggle<CR>
