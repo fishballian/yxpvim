@@ -1,0 +1,9 @@
+#include<stdio.h>
+
+int main()
+{
+#ifdef _POJ
+    freopen("poj1000.txt", "r", stdin);
+#endif
+    return 0;
+}
