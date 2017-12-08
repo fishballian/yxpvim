@@ -77,7 +77,7 @@ map <F7> :call CommonTest()<CR>
 "
 "compile c
 func CompileC()
-    exec "!gcc -lm -D _POJ -o %:t:r.out % && time ./%:t:r.out"
+    exec "!gcc -lstdc++ -lm -D _POJ -o %:t:r.out % && time ./%:t:r.out"
 endfunc
 map <F8> :call CompileC()<CR>
 
@@ -87,4 +87,5 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
 nnoremap <C-l> :TlistToggle<CR>
 
-autocmd BufNewFile *.c,*.cpp 0r ~/.vim/templates/poj.tlp
+autocmd BufNewFile *.cpp 0r ~/.vim/templates/poj_cpp.tlp
+autocmd BufNewFile *.c 0r ~/.vim/templates/poj_c.tlp
