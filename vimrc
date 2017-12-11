@@ -77,7 +77,7 @@ map <F7> :call CommonTest()<CR>
 "
 "compile c
 func CompileC()
-    exec "!gcc -lstdc++ -lm -D _POJ -o %:t:r.out % && time ./%:t:r.out"
+    exec "!gcc -lstdc++ -lm -D _POJ -D _TEST -o %:t:r.out % && time ./%:t:r.out"
 endfunc
 map <F8> :call CompileC()<CR>
 
