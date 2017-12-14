@@ -41,7 +41,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'mhinz/vim-signify'
-Plugin 'vim-scripts/taglist.vim'
+"Plugin 'vim-scripts/taglist.vim'
 call vundle#end()
 filetype plugin indent on
 
