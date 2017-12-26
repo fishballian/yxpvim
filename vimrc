@@ -53,7 +53,8 @@ set runtimepath^=$HOME/.vim/bundle/vim-erlang-runtime
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="mc"
-autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
+"autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
+autocmd FileType erlang set tags^=/opt/erlang19.3/lib/erlang/lib/tags
 autocmd FileType cpp set tags^=/usr/include/tags
 autocmd FileType c set tags^=/usr/include/tags
 
@@ -65,7 +66,7 @@ map <F6> :call CompileErl()<CR>
 
 "common test
 func CommonTest()
-    exec "!ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
+    exec "!export PATH=/opt/erlang19.3/bin:$PATH; ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
 endfunc
 map <F7> :call CommonTest()<CR>
 "
