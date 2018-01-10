@@ -31,7 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-erlang/vim-erlang-omnicomplete'
-"Plugin 'vim-erlang/vim-erlang-skeletons'
+Plugin 'vim-erlang/vim-erlang-skeletons'
 Plugin 'vim-erlang/vim-erlang-tags'
 Plugin 'vim-erlang/vim-erlang-compiler'
 Plugin 'vim-erlang/erlang-motions.vim'
@@ -81,6 +81,11 @@ func CompileC()
     exec "!gcc -lstdc++ -std=c++98 -lm -D _POJ -D _TEST -o %:t:r.out % && time ./%:t:r.out"
 endfunc
 map <F8> :call CompileC()<CR>
+
+func ResetServer()
+    exec "!rm -fr /data/database && sh mgectl restart && rm -fr MnesiaCore*"
+endfunc
+map <F9> :call ResetServer()<CR>
 
 colorscheme molokai
 let Tlist_Compact_Format = 1
