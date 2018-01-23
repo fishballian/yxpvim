@@ -25,7 +25,7 @@ filetype off
 set rtp+=$HOME/.vim/bundle/Vundle.vim  
 call vundle#begin()  
 Plugin 'kien/ctrlp.vim'
-"Plugin 'yegappan/grep'
+Plugin 'yegappan/grep'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
