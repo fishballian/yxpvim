@@ -25,7 +25,7 @@ filetype off
 set rtp+=$HOME/.vim/bundle/Vundle.vim  
 call vundle#begin()  
 Plugin 'kien/ctrlp.vim'
-Plugin 'yegappan/grep'
+"Plugin 'yegappan/grep'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
@@ -83,7 +83,7 @@ endfunc
 map <F8> :call CompileC()<CR>
 
 func ResetServer()
-    exec "!rm -fr /data/database && sh mgectl restart && rm -fr MnesiaCore*"
+    exec "!reset_server"
 endfunc
 map <F9> :call ResetServer()<CR>
 
@@ -95,3 +95,5 @@ nnoremap <C-l> :TlistToggle<CR>
 
 autocmd BufNewFile *.cpp 0r ~/.vim/templates/poj_cpp.tlp
 autocmd BufNewFile *.c 0r ~/.vim/templates/poj_c.tlp
+
+command! -nargs=+ NewGrep execute 'silent grep! <args>' | copen 10
