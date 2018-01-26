@@ -87,6 +87,12 @@ func ResetServer()
 endfunc
 map <F9> :call ResetServer()<CR>
 
+func Makeproto()
+    exec "!make proto proto_check && sh mgectl cl proto_check gateway_proto_router gateway_proto_map"
+endfunc
+map <F10> :call Makeproto()<CR>
+
+
 colorscheme molokai
 let Tlist_Compact_Format = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
