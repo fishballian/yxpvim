@@ -11,7 +11,7 @@ syntax on
 set nu
 call pathogen#infect()
 call pathogen#helptags()
-set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,recore_info.erl
+set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog
 set modeline 
 
 "powerline
@@ -83,7 +83,7 @@ endfunc
 map <F8> :call CompileC()<CR>
 
 func ResetServer()
-    exec "!reset_server"
+    exec "!rm -fr /data/database/mnesia/jzyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
 endfunc
 map <F9> :call ResetServer()<CR>
 
@@ -91,6 +91,11 @@ func Makeproto()
     exec "!make proto proto_check && sh mgectl cl proto_check gateway_proto_router gateway_proto_map"
 endfunc
 map <F10> :call Makeproto()<CR>
+
+func ResetServer2()
+    exec "!rm -fr /data/database/mnesia/jzyyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
+endfunc
+map <F11> :call ResetServer2()<CR>
 
 
 colorscheme molokai
