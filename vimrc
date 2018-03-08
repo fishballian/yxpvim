@@ -42,6 +42,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'flazz/vim-colorschemes'
 "Plugin 'mhinz/vim-signify'
 "Plugin 'vim-scripts/taglist.vim'
+"Plugin 'martinda/Jenkinsfile-vim-syntax'
 call vundle#end()
 filetype plugin indent on
 
@@ -83,7 +84,7 @@ endfunc
 map <F8> :call CompileC()<CR>
 
 func ResetServer()
-    exec "!rm -fr /data/database/mnesia/jzyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
+    exec "!make all && rm -fr /data/database/mnesia/jzyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
 endfunc
 map <F9> :call ResetServer()<CR>
 
@@ -93,7 +94,7 @@ endfunc
 map <F10> :call Makeproto()<CR>
 
 func ResetServer2()
-    exec "!rm -fr /data/database/mnesia/jzyyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
+    exec "!make all && rm -fr /data/database/mnesia/jzyyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
 endfunc
 map <F11> :call ResetServer2()<CR>
 
