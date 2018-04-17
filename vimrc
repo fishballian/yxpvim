@@ -49,9 +49,15 @@ filetype plugin indent on
 "erlang setting
 let g:erlangManPath='/usr/local/lib/erlang/man'
 let g:erlang_show_errors=0
-let erlang_skel_header = {"author": "yuanxiaopeng","owner": "mc"}
+let erlang_skel_header = {"author": "yuanxiaopeng", "owner": "mc"}
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-runtime
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
+set runtimepath^=$HOME/.vim/bundle/vim-erlang-compiler
+let g:erlang_make_options_rules =
+            \ [{'path_re': '/home/yxp/m22',
+            \   'options':
+            \     ' --outdir /home/yxp/m22/ebin' .
+            \     ''}]
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="mc"
 "autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
