@@ -11,7 +11,7 @@ syntax on
 set nu
 call pathogen#infect()
 call pathogen#helptags()
-set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog
+set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,Mnesia.*,_build
 set modeline 
 
 "powerline
@@ -49,7 +49,7 @@ filetype plugin indent on
 "erlang setting
 let g:erlangManPath='/usr/local/lib/erlang/man'
 let g:erlang_show_errors=0
-let erlang_skel_header = {"author": "yuanxiaopeng", "owner": "mc"}
+let erlang_skel_header = {"author": "yuanxiaopeng", "owner": "ya"}
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-runtime
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-compiler
@@ -59,9 +59,9 @@ let g:erlang_make_options_rules =
             \     ' --outdir /home/yxp/m22/ebin' .
             \     ''}]
 let g:erl_author="yuanxiaopeng"
-let g:erl_company="mc"
+let g:erl_company="ya"
 "autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
-autocmd FileType erlang set tags^=/opt/erlang19.3/lib/erlang/lib/tags
+autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
 autocmd FileType cpp set tags^=/usr/include/tags
 autocmd FileType c set tags^=/usr/include/tags
 
@@ -69,13 +69,25 @@ autocmd FileType c set tags^=/usr/include/tags
 func CompileErl()
     exec "!sh mgectl cl %:t:r"
 endfunc
-map <F6> :call CompileErl()<CR>
+
+func Rebar3Check()
+    exec "!rebar3 compile && rebar3 check"
+endfunc
+
+map <F6> :call Rebar3Check()<CR>
 
 "common test
 func CommonTest()
     exec "!export PATH=/opt/erlang19.3/bin:$PATH; ct_run -suite %:t:r -dir test/game -logdir test/testlog -config test/server.config -include include include/proto config/erl -noinput -pa ebin"
 endfunc
-map <F7> :call CommonTest()<CR>
+
+"common test2
+func CommonTest2()
+    exec "!rebar3 compile && rebar3 ct --suite %:t:r"
+endfunc
+
+
+map <F7> :call CommonTest2()<CR>
 "
 ""compile csharp
 "func CompileCs()
