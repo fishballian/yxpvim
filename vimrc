@@ -12,7 +12,7 @@ set nu
 call pathogen#infect()
 call pathogen#helptags()
 set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,Mnesia.*,_build
-set modeline 
+set modeline
 
 "powerline
 set laststatus=2
@@ -22,8 +22,8 @@ let g:Powerline_symbols = 'compatible'
 "vundle
 set nocompatible
 filetype off
-set rtp+=$HOME/.vim/bundle/Vundle.vim  
-call vundle#begin()  
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plugin 'kien/ctrlp.vim'
 Plugin 'yegappan/grep'
 Plugin 'scrooloose/nerdtree'
@@ -71,7 +71,7 @@ func CompileErl()
 endfunc
 
 func Rebar3Check()
-    exec "!rebar3 compile && rebar3 check"
+    exec "!rebar3 release && rebar3 check"
 endfunc
 
 map <F6> :call Rebar3Check()<CR>
@@ -83,7 +83,7 @@ endfunc
 
 "common test2
 func CommonTest2()
-    exec "!rebar3 compile && rebar3 ct --suite %:t:r"
+    exec "!rebar3 release && rebar3 ct --suite %:t:r"
 endfunc
 
 
