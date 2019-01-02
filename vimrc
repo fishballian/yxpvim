@@ -61,7 +61,7 @@ let g:erlang_make_options_rules =
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="ya"
 "autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
-autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
+autocmd FileType erlang set tags^=/opt/erlang19.3/lib/erlang/lib/tags
 autocmd FileType cpp set tags^=/usr/include/tags
 autocmd FileType c set tags^=/usr/include/tags
 
@@ -71,7 +71,7 @@ func CompileErl()
 endfunc
 
 func Rebar3Check()
-    exec "!rebar3 release && rebar3 check"
+    exec "!rebar3 release && rebar3 as test eunit && rebar3 as test ct"
 endfunc
 
 map <F6> :call Rebar3Check()<CR>
