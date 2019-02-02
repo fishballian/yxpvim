@@ -74,7 +74,7 @@ func Rebar3Check()
     exec "!rebar3 release && rebar3 as test eunit && rebar3 as test ct"
 endfunc
 
-map <F6> :call Rebar3Check()<CR>
+map <F6> :call CompileAndReload()<CR>
 
 "common test
 func CommonTest()
@@ -86,6 +86,9 @@ func CommonTest2()
     exec "!rebar3 release && rebar3 ct --suite %:t:r"
 endfunc
 
+func CompileAndReload()
+    exec "!make all && _build/default/rel/game/bin/game eval \"game_lib:hot_update()\""
+endfunc
 
 map <F7> :call CommonTest2()<CR>
 "
@@ -115,6 +118,7 @@ func ResetServer2()
     exec "!make all && rm -fr /data/database/mnesia/jzyyw_debug_1/ && sh mgectl restart && rm -fr MnesiaCore*"
 endfunc
 map <F11> :call ResetServer2()<CR>
+
 
 
 colorscheme molokai
