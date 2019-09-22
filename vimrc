@@ -11,7 +11,7 @@ syntax on
 set nu
 call pathogen#infect()
 call pathogen#helptags()
-set wildignore+=*.beam,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,recore_info.erl
+set wildignore+=*.beam,*.class,cifs*,*.mcm,tags,.git,.svn,ets_meta_config,*.dump,Proto.xml,record_info.erl,testlog,recore_info.erl,_build
 set modeline 
 
 "powerline
@@ -53,7 +53,7 @@ set runtimepath^=$HOME/.vim/bundle/vim-erlang-runtime
 set runtimepath^=$HOME/.vim/bundle/vim-erlang-tags
 let g:erl_author="yuanxiaopeng"
 let g:erl_company="mc"
-autocmd FileType erlang set tags^=/data/erlang17.5/lib/erlang/lib/tags
+autocmd FileType erlang set tags^=/usr/lib/erlang/lib/tags
 autocmd FileType cpp set tags^=/usr/include/tags
 autocmd FileType c set tags^=/usr/include/tags
 
