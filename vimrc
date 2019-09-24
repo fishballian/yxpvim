@@ -27,6 +27,7 @@ call vundle#begin()
 Plugin 'kien/ctrlp.vim'
 Plugin 'yegappan/grep'
 Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
 "Plugin 'Lokaltog/vim-powerline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -71,6 +72,12 @@ endfunc
 
 func Rebar3Check()
     exec "!rebar3 release && rebar3 as test eunit && rebar3 as test ct"
+endfunc
+
+map <F5> :call GoRun() <CR>
+
+func GoRun()
+    exec "GoRun"
 endfunc
 
 map <F6> :call CompileAndReload()<CR>
